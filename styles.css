@@ -1,0 +1,9 @@
+body{
+    margin: 0;
+    background-image: url("COLLECT_NOW.jpg");
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 100vh;
+    height: 100vh;
+}
