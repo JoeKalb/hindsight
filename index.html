@@ -9,22 +9,27 @@
 </head>
 <body onclick="hindsightOpen()">
     <script>
-        let cira = window.open('https://www.twitch.tv/ciracorellia', '_blank');
-        let maj = window.open('https://www.twitch.tv/majintaj', '_blank');
-        let bitmusic = window.open('https://www.twitch.tv/88bitmusic', '_blank');
-        let butt = window.open('https://www.twitch.tv/thabuttress', '_blank');
-        
         function openInNewTab(url){
-            let win = window.open(url, '_blank')
+            let win = window.open();
+            win.location = url;
         }
 
         function hindsightOpen(){
-            let team = ['thabuttress', '88bitmusic', 'ciracorellia', 'majintaj']
+            let team = ['thabuttress', 'ciracorellia', '88bitmusic', 'majintaj']
             team.forEach((visionary) => {
                 openInNewTab('https://www.twitch.tv/' + visionary)
             })
         }
         
+        let checkPop = window.open('', target='_blank');
+        if(checkPop == null || typeof(checkPop) =='undefined'){
+            alert('Please disable your pop-up blocker and then click the screen')
+        }
+        else {
+            checkPop.close();
+        }
+
+        window.onload= hindsightOpen();
     </script>
 </body>
 </html>
