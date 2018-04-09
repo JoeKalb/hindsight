@@ -20,13 +20,12 @@
                 return true
             }
             else {
+                popUP.close()
                 let popUP2 = window.open('', target='_blank');
                 if(popUP2 == null || typeof(popUP2) =='undefined'){
                     alert('Please disable your pop-up blocker and then click the screen')
-                    popUP.close()
                     return true
                 }
-                popUP.close()
                 popUP2.close()
                 return false
             }
