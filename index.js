@@ -4,7 +4,7 @@ const http = require('http').Server(app);
 const path = require('path');
 
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 app.use('/', express.static(path.join(__dirname + '/')));
 app.get('/', (req, res) => {

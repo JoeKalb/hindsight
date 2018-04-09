@@ -10,26 +10,38 @@
 <body onclick="hindsightOpen()">
     <script>
         function openInNewTab(url){
-            let win = window.open();
-            win.location = url;
+            let win = window.open(url, '_blank')
         }
 
-        function hindsightOpen(){
-            let team = ['thabuttress', 'ciracorellia', '88bitmusic', 'majintaj']
-            team.forEach((visionary) => {
-                openInNewTab('https://www.twitch.tv/' + visionary)
-            })
+        function checkPopUp(){
+            let popUP = window.open('', target='_blank');
+            if(popUP == null || typeof(popUP) =='undefined'){
+                alert('Please disable your pop-up blocker and then click the screen')
+                return true
+            }
+            else {
+                let popUP2 = window.open('', target='_blank');
+                if(popUP2 == null || typeof(popUP2) =='undefined'){
+                    alert('Please disable your pop-up blocker and then click the screen')
+                    popUP.close()
+                    return true
+                }
+                popUP.close()
+                popUP2.close()
+                return false
+            }
         }
         
-        let checkPop = window.open('', target='_blank');
-        if(checkPop == null || typeof(checkPop) =='undefined'){
-            alert('Please disable your pop-up blocker and then click the screen')
+        function hindsightOpen(){
+            if(!checkPopUp()) {
+                let team = ['thabuttress', 'ciracorellia', '88bitmusic', 'majintaj']
+                team.forEach((visionary) => {
+                    openInNewTab('https://www.twitch.tv/' + visionary)
+                })
+            }
         }
-        else {
-            checkPop.close();
-        }
-
-        window.onload= hindsightOpen();
+        
+        window.onload = hindsightOpen()
     </script>
 </body>
 </html>
