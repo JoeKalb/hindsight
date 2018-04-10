@@ -7,14 +7,18 @@
     <link rel="stylesheet" href="styles.css">
     <title>HINDSIGHT IS 2020</title>
 </head>
-<body onclick="hindsightOpen()">
+<body onclick="hindsightOpen()" id="body">
     <h1>ENABLE POP-UPS AND CLICK ANYWHERE TO OPEN THE STREAMS!!!</h1>
     <h1>MAKE SURE TO CLICK THE PURPLE <span>PURCHASE</span> BUTTON IN THE EXTENSION AFTER COLLECTING 20 TOKENS</h1>
 
-    <!--<img src="https://static-cdn.jtvnw.net/emoticons/v1/896494/2.0" alt="butt" id="butt">
-    <img src="https://static-cdn.jtvnw.net/emoticons/v1/905934/2.0" alt="bitmusic" id="bitmusic">
-    <img src="https://static-cdn.jtvnw.net/emoticons/v1/906643/2.0" alt="cira" id="cira">-->
+    <!--cs61A berkley-->
     <script>
+        let sightEmotes = ['https://static-cdn.jtvnw.net/emoticons/v1/896494/2.0', 
+                            'https://static-cdn.jtvnw.net/emoticons/v1/905934/2.0',
+                            'https://static-cdn.jtvnw.net/emoticons/v1/906643/2.0']
+
+        let rand = Math.floor(Math.random() * 3)
+        document.documentElement.style.cursor = "url(" + sightEmotes[rand] + "), auto"
         function openInNewTab(url){
             let win = window.open(url, '_blank')
         }
